@@ -8,7 +8,13 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
+    <script type="text/javascript">
+           function init()
+           {
+        	   var testVal = document.getElementById('mytextId').value;
+        	   AndroidFunction.showToast(testVal);
+           }
+    </script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -17,6 +23,18 @@
   </head>
 
   <body>
+    <div style="float: left;width: 50%;">
+           <input type="text" style="width: 180px;" 
+
+                   name="myText" id="mytextId" value="From JAVA"/>
+           
+        </div>
+        <div style="clear: both;height: 3px;"> </div>
+        <div>
+          <input value="submit" type="button" value="test"
+
+            id="btnSubmit" onclick="javascript:return init();" /> 
+        </div>  
     <header>
       <div class="inner">
         <h1>Try</h1>
