@@ -23,25 +23,7 @@
         	   AndroidFunction_dup.showToast(testVal);
            }
     </script>
-    <p>Click the button to get your coordinates.</p>
-
-<button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
-    <script>
-var x = document.getElementById("demo");
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude; 
-}
-</script>
+    
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -58,7 +40,7 @@ function showPosition(position) {
         <a href="https://github.com/monojo" class="button"><small>Follow me on</small> GitHub</a>
       </div>
     </header>
-
+    
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
@@ -90,7 +72,25 @@ function showPosition(position) {
             id="btnSubmit2" onclick="javascript:return init_dup();" /> 
         </div>  
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>Click the button to get your coordinates.</p>
 
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+    <script>
+var x = document.getElementById("demo");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude; 
+}
+</script>
 <pre><code>$ cd your_repo_root/repo_name
 $ git fetch origin
 $ git checkout gh-pages
