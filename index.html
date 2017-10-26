@@ -28,8 +28,10 @@
         var x = document.getElementById("demo");
         function getLocation() {
             if (navigator.geolocation) {
+                alert("getting position");
                 navigator.geolocation.getCurrentPosition(showPosition);
             } else {
+                alert("Geolocation is not supported by this browser.");
                 x.innerHTML = "Geolocation is not supported by this browser.";
             }
         }
