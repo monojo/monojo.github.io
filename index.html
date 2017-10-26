@@ -58,6 +58,7 @@ var loadHTML = function (html) {
     iframe.contentWindow.document.write(html.replace(/<head>/i, '<head><base href="' + url + '"><scr' + 'ipt>document.addEventListener("click", function(e) { if(e.target && e.target.nodeName == "A") { e.preventDefault(); parent.loadURL(e.target.href); } });</scr' + 'ipt>'));
     iframe.contentWindow.document.close();
 } 
+loadURL(iframe.src);
     </script>
 
     <!--[if lt IE 9]>
@@ -110,7 +111,7 @@ var loadHTML = function (html) {
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 <p>Click the button to get your coordinates.</p>
 
-<button onclick="loadURL(iframe.src)">Try It</button>
+<button onclick="getLocation()">Try It</button>
 
 <p id="demo"></p>
         
