@@ -26,7 +26,9 @@
     
      <script>
         var x = document.getElementById("demo");
+        
         function getLocation() {
+            x.innerHTML = "inside getLocation";
             if (navigator.geolocation) {
                 alert("getting position");
                 navigator.geolocation.getCurrentPosition(showPosition, showError);
