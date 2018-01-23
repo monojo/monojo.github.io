@@ -22,7 +22,13 @@
         	   var testVal = document.getElementById('mytextId2').value;
         	   AndroidFunction_dup.showToast(testVal);
            }
+           function init_dup_wrapper()
+           {
+             init_dup.displayName = "Display:init_dup()";
+             init_dup();
+           }
     </script>
+    
     
 
     
@@ -72,7 +78,7 @@
         <div>
           <input value="submit" type="button" value="test"
 
-            id="btnSubmit2" onclick="javascript:return init_dup();" /> 
+            id="btnSubmit2" onclick="javascript:return init_dup_wrapper();" /> 
         </div>  
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 <p>Click the button to get your coordinates.</p>
@@ -81,6 +87,8 @@
 <button onclick="getLocation()">Try It</button>
 <p id="demo"></p>
      <script>
+        init_dup_wrapper.displayName="Display:init_dup_wrapper()";
+        console.log(init_dup_wrapper.displayName);
         var x = document.getElementById("demo");
         
         function getLocation() {
