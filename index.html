@@ -20,10 +20,11 @@
            function init_dup()
            {
         	   var testVal = document.getElementById('mytextId2').value;
-        	   AndroidFunction_dup.showToast(testVal);
              console.log("about to show");
              console.log(arguments.callee);
              console.log(arguments.caller);
+        	   AndroidFunction_dup.showToast(testVal);
+       
            }
            function init_dup_wrapper()
            {
