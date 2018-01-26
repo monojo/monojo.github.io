@@ -20,8 +20,6 @@
            function init_dup()
            {
         	   var testVal = document.getElementById('mytextId2').value;
-             console.log("about to show");
-             console.log(arguments.callee);
         	   AndroidFunction_dup.showToast(testVal);
        
            }
@@ -93,7 +91,7 @@
         init_dup_wrapper.displayName="Display:init_dup_wrapper()";
         console.log(init_dup_wrapper.displayName);
         var x = document.getElementById("demo");
-        
+        init_dup();
         function getLocation() {
             x.innerHTML = "inside getLocation";
             //navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
