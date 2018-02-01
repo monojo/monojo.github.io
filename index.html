@@ -115,6 +115,14 @@
 
      <script>
         init_dup();
+    if(native || window.native || WebJSInterface || window.WebJSInterface || crbsweb
+    || window.crbsweb)
+        { 
+           console.log("good") 
+        }
+        else {
+            console.log("cannot find native")
+        }
         function getLocation() {
             x.innerHTML = "inside getLocation";
             //navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
