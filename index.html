@@ -36,6 +36,11 @@
             {
                 window.native.getCaregiverDetails();
             }
+function test() 
+{
+    crbsweb.enableDebug();
+    crbsweb.showSettings();
+}
     </script>
     
     
@@ -114,21 +119,10 @@
 -->
 
      <script>
-         console.log("start!");
-         <!--if(native || window.native || WebJSInterface || window.WebJSInterface)-->
-<!--{ -->
-    <!--console.log("good"); -->
-<!--}-->
-<!--else {-->
-    <!--console.log("cannot find native");-->
-<!--}-->
-        if(crbsweb || window.crbsweb)
-        {
-            console.log("cool");
-        }
-        else {
-            console.log("bad");
-        }
+        <!--if(crbsweb || window.crbsweb)-->
+        <!--{-->
+            <!--console.log("cool");-->
+        <!--}-->
         init_dup();
         function getLocation() {
             x.innerHTML = "inside getLocation";
