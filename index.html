@@ -32,6 +32,10 @@
             {
                 WebJSInterface.goToHome();
             }
+            function getCGD()
+            {
+                native.getCaregiverDetails();
+            }
     </script>
     
     
@@ -72,9 +76,14 @@
             id="btnSubmit" onclick="javascript:return init();" /> 
         </div>  
         <div>
-            <input value="submit" type="button" value="test"
+            <input value="gohome" type="button" value="test"
 
             id="btnCVSGoHome" onclick="javascript:return goHome();" /> 
+        </div>  
+        <div>
+            <input value="CGD" type="button" value="test"
+
+            id="btnCGD" onclick="javascript:return getCGD();" /> 
         </div>  
         
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
