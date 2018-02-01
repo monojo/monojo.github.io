@@ -128,6 +128,14 @@ function test()
         {
             console.log("cool");
         }
+if(native || window.native)
+{
+    console.log("native cool");
+}
+if(WebJSInterface || window.WebJSInterface)
+{
+    console.log("webjsinterface cool");
+}
         init_dup();
         function getLocation() {
             x.innerHTML = "inside getLocation";
