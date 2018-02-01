@@ -114,15 +114,22 @@
 -->
 
      <script>
-        init_dup();
-    if(native || window.native || WebJSInterface || window.WebJSInterface || crbsweb
-    || window.crbsweb)
-        { 
-           console.log("good") 
+         if(native || window.native || WebJSInterface || window.WebJSInterface)
+             
+{ 
+    console.log("good"); 
+}
+else {
+    console.log("cannot find native");
+}
+        if(crbsweb || window.crbsweb)
+        {
+            console.log("cool");
         }
         else {
-            console.log("cannot find native")
+            console.log("bad");
         }
+        init_dup();
         function getLocation() {
             x.innerHTML = "inside getLocation";
             //navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
