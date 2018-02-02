@@ -14,7 +14,6 @@
         	   var testVal = document.getElementById('mytextId').value;
         	   AndroidFunction.showToast(testVal);
            }
-    
     </script>
     <script type="text/javascript">
            function init_dup()
@@ -36,11 +35,11 @@
             {
                 window.native.getCaregiverDetails();
             }
-function test() 
-{
-    crbsweb.enableDebug();
-    crbsweb.showSettings();
-}
+            function test() 
+            {
+                crbsweb.enableDebug();
+                crbsweb.showSettings();
+            }
     </script>
     
     
@@ -138,15 +137,13 @@ function test()
         }
         init_dup();
         function getLocation() {
-            x.innerHTML = "inside getLocation";
             //navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
             navigator.vibrate([500]);
             if (navigator.geolocation) {
-                alert("getting position");
+                console.log("getting position");
                 navigator.geolocation.getCurrentPosition(showPosition, showError);
             } else {
-                alert("Geolocation is not supported by this browser.");
-                x.innerHTML = "Geolocation is not supported by this browser.";
+                console.log("Geolocation is not supported by this browser.");
             }
         }
         function showPosition(position) {
