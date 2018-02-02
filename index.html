@@ -41,7 +41,7 @@
                 crbsweb.showSettings();
             }
 function getLocation() {
-    //navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
     navigator.vibrate([500]);
     if (navigator.geolocation) {
         console.log("getting position");
