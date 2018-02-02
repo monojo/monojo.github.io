@@ -40,6 +40,36 @@
                 crbsweb.enableDebug();
                 crbsweb.showSettings();
             }
+function getLocation() {
+    //navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+    navigator.vibrate([500]);
+    if (navigator.geolocation) {
+        console.log("getting position");
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
+}
+function showPosition(position) {
+    console.log("Latitude: " + position.coords.latitude);
+}
+function showError(error) {
+    switch(error.code) {
+        console.log("error");    
+        case error.PERMISSION_DENIED:
+        console.log("PERMISSION_DENIED:");    
+        break;
+        case error.POSITION_UNAVAILABLE:
+        console.log("POSITION_UNAVAILABLE:");    
+        break;
+        case error.TIMEOUT:
+        console.log("TIMEOUT:");    
+        break;
+        case error.UNKNOWN_ERROR:
+        console.log("UNKNOWN_ERROR:");    
+        break;
+    }
+}
     </script>
     
     
@@ -136,36 +166,6 @@
             console.log("webjsinterface cool");
         }
         init_dup();
-        function getLocation() {
-            //navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-            navigator.vibrate([500]);
-            if (navigator.geolocation) {
-                console.log("getting position");
-                navigator.geolocation.getCurrentPosition(showPosition, showError);
-            } else {
-                console.log("Geolocation is not supported by this browser.");
-            }
-        }
-        function showPosition(position) {
-          console.log("Latitude: " + position.coords.latitude);
-        }
-       function showError(error) {
-    switch(error.code) {
-        console.log("error");    
-        case error.PERMISSION_DENIED:
-            console.log("PERMISSION_DENIED:");    
-            break;
-        case error.POSITION_UNAVAILABLE:
-            console.log("POSITION_UNAVAILABLE:");    
-            break;
-        case error.TIMEOUT:
-            console.log("TIMEOUT:");    
-            break;
-        case error.UNKNOWN_ERROR:
-            console.log("UNKNOWN_ERROR:");    
-            break;
-    }
-}
     </script>
         
 
