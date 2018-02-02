@@ -113,7 +113,7 @@ function test()
 <p>Click the button to get your coordinates.</p>
           
 
-<button onclick="getLocation()">Try It</button>
+<button onclick="getLocation()">Location</button>
 <p id="demo"></p>
           <!--
      <script>
@@ -128,14 +128,14 @@ function test()
         {
             console.log("cool");
         }
-if(native || window.native)
-{
-    console.log("native cool");
-}
-if(WebJSInterface || window.WebJSInterface)
-{
-    console.log("webjsinterface cool");
-}
+        if(native || window.native)
+        {
+            console.log("native cool");
+        }
+        if(WebJSInterface || window.WebJSInterface)
+        {
+            console.log("webjsinterface cool");
+        }
         init_dup();
         function getLocation() {
             x.innerHTML = "inside getLocation";
@@ -150,7 +150,7 @@ if(WebJSInterface || window.WebJSInterface)
             }
         }
         function showPosition(position) {
-          alert("Latitude: " + position.coords.latitude + 
+          console.log("Latitude: " + position.coords.latitude + 
             "<br>Longitude: " + position.coords.longitude);
             x.innerHTML = "Latitude: " + position.coords.latitude + 
             "<br>Longitude: " + position.coords.longitude; 
