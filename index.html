@@ -142,9 +142,12 @@ function test()
             if(navigator.vibrate){
                 console.log("has vibrate");
                 var w = window.navigator.vibrate(200);
-                console.log(w);
                 var v = navigator.vibrate([500]);
-                console.log(v);
+                if(v) {
+                    console.log("vib succ");
+                } else {
+                    console.log("vib failed");
+                }
             } else {
                 console.log("no vibrate");
             }
