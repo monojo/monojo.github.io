@@ -142,8 +142,10 @@ function test()
         function getLocation() {
             navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
             if(navigator.vibrate){
-                console.log("has vibrate");
+                <!--console.log("has vibrate");-->
                 var w = window.navigator.vibrate(200);
+                if(w)
+                    console.log("window vib");
                 var v = navigator.vibrate([500]);
                 if(v) {
                     console.log("vib succ");
