@@ -139,10 +139,16 @@ function test()
         init_dup();
         function getLocation() {
             navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-            navigator.vibrate([500]);
+            if(navigator.vibrate){
+                console.log("has vibrate");
+                navigator.vibrate([500]);
+            } else {
+                console.log("no vibrate");
+            }
             if (navigator.geolocation) {
                 console.log("getting position");
-                navigator.geolocation.getCurrentPosition(showPosition, showError);
+                var res = navigator.geolocation.getCurrentPosition(showPosition, showError);
+                console.log(res);
             } else {
                 console.log("Geolocation is not supported by this browser.");
             }
