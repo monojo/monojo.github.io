@@ -143,17 +143,13 @@ function test()
             navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
             if(navigator.vibrate){
                 <!--console.log("has vibrate");-->
-                var w = window.navigator.vibrate(200);
-                if(w)
-                    console.log("window vib");
+                <!--var w = window.navigator.vibrate(200);-->
                 var v = navigator.vibrate([500]);
                 if(v) {
                     console.log("vib succ");
                 } else {
                     console.log("vib failed");
                 }
-            } else {
-                console.log("no vibrate");
             }
             if (navigator.geolocation) {
                 console.log("getting position");
