@@ -143,8 +143,9 @@ function test()
 navigator.getBattery().then(function(battery)) {
     batteryIsChargin = battery.charging;
     charTime = battery.charginTime;
-}
+};
         console.log(charTime);
+        console.log("wtf");
 // Check for Geolocation API permissions  
 navigator.permissions.query({name:'geolocation'})
     .then(function(permissionStatus) {  
