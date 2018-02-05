@@ -137,6 +137,16 @@ function test()
             console.log("webjsinterface cool");
         }
         var time = performance.now();
+// Check for Geolocation API permissions  
+navigator.permissions.query({name:'geolocation'})
+    .then(function(permissionStatus) {  
+        console.log('geolocation permission state is ', permissionStatus.state);
+
+        permissionStatus.onchange = function() {  
+            console.log('geolocation permission state has changed to ',
+                this.state);
+        };
+    });
         console.log(time);
         init_dup();
         function getLocation() {
