@@ -159,26 +159,30 @@ function test()
                 console.log("Geolocation is not supported by this browser.");
             }
         }
-        function showPosition(position) {
-          console.log("showPostion");
-          console.log("Latitude: " + position.coords.latitude + 
-            "<br>Longitude: " + position.coords.longitude);
-        }
-       function showError(error) {
-           console.log("er");
+function showPosition(position) {
+    console.log("showPostion");
+    console.log("Latitude: " + position.coords.latitude + 
+        "<br>Longitude: " + position.coords.longitude);
+}
+function showError(error) {
+    console.log("er");
     switch(error.code) {
-            <!--console.log("error");-->
-        case error.PERMISSION_DENIED:
-            break;
+        <!--console.log("error");-->
+            case error.PERMISSION_DENIED:
+            console.log("per");
+        break;
         case error.POSITION_UNAVAILABLE:
-            break;
+        console.log("unavail");
+        break;
         case error.TIMEOUT:
-            break;
+        console.log("time");
+        break;
         case error.UNKNOWN_ERROR:
-            break;
+        console.log("unknow");
+        break;
     }
 }
-    </script>
+     </script>
         
 
 <iframe src="https://bumoslab.github.io">
