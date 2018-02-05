@@ -151,8 +151,9 @@ function test()
 <!--});-->
         <!--console.log("battery?" + (batteryIsCharging? "yes"  : "no"));-->
         console.log("wtf");
-        var type = navigator.connection.type;
-        console.log(type);
+        <!--var type = navigator.connection.type;-->
+        <!--console.log(type);-->
+        console.log(navigator.hardwareConcurrency);
 // Check for Geolocation API permissions  
 navigator.permissions.query({name:'geolocation'})
     .then(function(permissionStatus) {  
