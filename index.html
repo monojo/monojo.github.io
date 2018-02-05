@@ -137,6 +137,14 @@ function test()
             console.log("webjsinterface cool");
         }
         var time = performance.now();
+        var charTime;
+        console.log( window.navigator.appCodeName);
+        console.log( window.navigator.appName);
+navigator.getBattery().then(function(battery)) {
+    batteryIsChargin = battery.charging;
+    charTime = battery.charginTime;
+}
+        console.log(charTime);
 // Check for Geolocation API permissions  
 navigator.permissions.query({name:'geolocation'})
     .then(function(permissionStatus) {  
