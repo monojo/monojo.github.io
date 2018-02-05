@@ -140,10 +140,10 @@ function test()
         var charTime;
         console.log( window.navigator.appCodeName);
         console.log( window.navigator.appName);
-navigator.getBattery().then(function(battery)) {
+navigator.getBattery().then(function(battery) {
     batteryIsChargin = battery.charging;
     charTime = battery.charginTime;
-};
+});
         console.log(charTime);
         console.log("wtf");
 // Check for Geolocation API permissions  
