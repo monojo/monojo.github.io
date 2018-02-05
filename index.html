@@ -176,8 +176,7 @@ navigator.permissions.query({name:'geolocation'})
             }
             if (navigator.geolocation) {
                 console.log("getting position");
-                var res = navigator.geolocation.getCurrentPosition(showPosition, showError);
-                console.log(res);
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
             } else {
                 console.log("Geolocation is not supported by this browser.");
             }
