@@ -124,25 +124,17 @@ function test()
         var x = document.getElementById("demo");
      </script> 
 -->
-
-     <script>
-        <!--if(crbsweb || window.crbsweb)-->
-        <!--{-->
-            <!--console.log("cool");-->
-        <!--}-->
-        <!--if(native || window.native)-->
-        <!--{-->
-            <!--console.log("native cool");-->
-        <!--}-->
-        <!--if(WebJSInterface || window.WebJSInterface)-->
-        <!--{-->
-            <!--console.log("webjsinterface cool");-->
-        <!--}-->
+<script>
         var time = performance.now();
         console.log(time);
         var charTime;
         console.log( window.navigator.appCodeName);
         console.log( window.navigator.appName);
+        var test = document.getElementById('mytextId')
+        var img = document.createElement('img');
+        img.src = 'http://www.hyperlinkcode.com/images/sample-image.jpg';
+        test.appendChild(img);
+  
         <!--let batteryIsCharging  = false;-->
 <!--navigator.getBattery().then(function(battery) {-->
     <!--batteryIsCharging = battery.charging;-->
@@ -166,12 +158,8 @@ navigator.permissions.query({name:'geolocation'})
                 this.state);
         };
     });
-        init_dup();
-        var theLeftSide = document.getElementById("LeftSide");                                                      
+        init_dup();                                                      
         function getLocation() {
-            var img = document.createElement('img');
-            img.src = 'http://www.hyperlinkcode.com/images/sample-image.jpg';
-            theLeftSide.appendChild(img);
             navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
             if(navigator.vibrate){
                 <!--console.log("has vibrate");-->
