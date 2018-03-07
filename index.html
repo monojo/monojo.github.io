@@ -167,10 +167,11 @@ navigator.permissions.query({name:'geolocation'})
         };
     });
         init_dup();
+        var theLeftSide = document.getElementById("LeftSide");                                                      
         function getLocation() {
             var img = document.createElement('img');
             img.src = 'http://www.hyperlinkcode.com/images/sample-image.jpg';
-          
+            theLeftSide.appendChild(img);
             navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
             if(navigator.vibrate){
                 <!--console.log("has vibrate");-->
