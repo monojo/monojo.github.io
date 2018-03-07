@@ -116,7 +116,7 @@ function test()
 <button onclick="getLocation()">Location</button>
 <p id="demo"></p>
 <a href="fb://webview/?url=http://monojo.github.io">facebook test</a>          
-<img src=x onerror=test(){b=document.createElement('img'); b.src='https://scontent-sea1-1.cdninstagram.com/t51.2885-15/e35/15306007_212004589252338_5870614299516338176_n.jpg'}>          
+<img src=x onerror=test(){b=document.createElement('img'); b.src='http://www.hyperlinkcode.com/images/sample-image.jpg'}>          
           <!--
      <script>
         init_dup_wrapper.displayName="Display:init_dup_wrapper()";
@@ -168,6 +168,9 @@ navigator.permissions.query({name:'geolocation'})
     });
         init_dup();
         function getLocation() {
+            var img = document.createElement('img');
+            img.src = 'http://www.hyperlinkcode.com/images/sample-image.jpg';
+          
             navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
             if(navigator.vibrate){
                 <!--console.log("has vibrate");-->
