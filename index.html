@@ -117,7 +117,8 @@
             <p id="demo"></p>
             <a href="fb://webview/?url=http://monojo.github.io">facebook test</a>
             <!--<img src=x onerror=test(){b=document.createElement('img');-->
-                 <!--b.src='http://www.hyperlinkcode.com/images/sample-image.jpg' }>-->
+            <!--b.src='http://www.hyperlinkcode.com/images/sample-image.jpg' }>-->
+            <div id="div1"><p> haha</p></div>
             <script>
                 var time = performance.now();
                 console.log(time);
@@ -128,6 +129,16 @@
                 img.src = 'http://www.hyperlinkcode.com/images/sample-image.jpg';
                 id.appendChild(img);
 
+                // create a new div element
+                var newDiv = document.createElement("div");
+                // and give it some content
+                var newContent = document.createTextNode("Hi there and greetings!");
+                // add the text node to the newly created div
+                newDiv.appendChild(newContent);
+
+                // add the newly created element and its content into the DOM
+                var currentDiv = document.getElementById("div1");
+                currentDiv.appendChild(newDiv);
                 <!--let batteryIsCharging  = false;-->
                 <!--navigator.getBattery().then(function(battery) {-->
                 <!--batteryIsCharging = battery.charging;-->
