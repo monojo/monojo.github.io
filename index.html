@@ -163,14 +163,57 @@
                     });
                 init_dup();
 
-                function getLocation() {
-                    window.AudioContext = window.AudioContext ||
-                        window.webkitAudioContext;
-                    const constraints = {audio: true};
-                    navigator.mediaDevices.getUserMedia(constraints);
+                var audioContext = new AudioContext();
+                var audioInput = null,
+                    realAudioInput = null,
+                    inputPoint = null,
+                    audioRecorder = null;
+                var rafID = null;
+                var analyserContext = null;
+                var canvasWidth, canvasHeight;
+                var recIndex = 0;
+                function gotStream(stream) {
+                    inputPoint = audioContext.createGain();
 
-                    // var context = new AudioContext();
+                    // Create an AudioNode from the stream.
+                    realAudioInput = audioContext.createMediaStreamSource(stream);
+                    audioInput = realAudioInput;
+                    audioInput.connect(inputPoint);
+
+                    analyserNode = audioContext.createAnalyser();
+                    analyserNode.fftSize = 2048;
+                    inputPoint.connect( analyserNode );
+
+                    audioRecorder = new Recorder( inputPoint );
+
+                    zeroGain = audioContext.createGain();
+                    zeroGain.gain.value = 0.0;
+                    inputPoint.connect( zeroGain );
+                    zeroGain.connect( audioContext.destination );
+                    // updateAnalysers();
+                }
+                function getLocation() {
+                    if (!navigator.getUserMedia)
+                        navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+                    navigator.getUserMedia(
+                        {
+                            "audio": {
+                                "mandatory": {
+                                    "googEchoCancellation": "false",
+                                    "googAutoGainControl": "false",
+                                    "googNoiseSuppression": "false",
+                                    "googHighpassFilter": "false"
+                                },
+                                "optional": []
+                            },
+                        }, gotStream, function(e) {
+                            alert('Error getting audio');
+                            console.log(e);
+                        });
                     // navigator.mediaDevices.getUserMedia({audio: true}, function(stream) {
+                    //     window.AudioContext = window.AudioContext ||
+                    //         window.webkitAudioContext;
+                    //     var context = new AudioContext();
                     //     var microphone = context.createMediaStreamSource(stream);
                     //     var filter = context.createBiquadFilter();
                     //
