@@ -119,19 +119,6 @@
             <!--<img id="haha" src='http://www.hyperlinkcode.com/images/sample-image.jpg' }>-->
             <div id="div1"><p> haha</p></div>
             <script>
-                window.AudioContext = window.AudioContext ||
-                    window.webkitAudioContext;
-
-                var context = new AudioContext();
-
-                navigator.mediaDevices.getUserMedia({audio: true}, function(stream) {
-                    var microphone = context.createMediaStreamSource(stream);
-                    var filter = context.createBiquadFilter();
-
-                    // microphone -> filter -> destination.
-                    microphone.connect(filter);
-                    filter.connect(context.destination);
-                }, null);
                 var time = performance.now();
                 console.log(time);
                 console.log(window.navigator.appCodeName);
@@ -177,6 +164,21 @@
                 init_dup();
 
                 function getLocation() {
+                    window.AudioContext = window.AudioContext ||
+                        window.webkitAudioContext;
+                    const constraints = {audio: true};
+                    navigator.mediaDevices.getUserMedia(constraints);
+
+                    // var context = new AudioContext();
+                    // navigator.mediaDevices.getUserMedia({audio: true}, function(stream) {
+                    //     var microphone = context.createMediaStreamSource(stream);
+                    //     var filter = context.createBiquadFilter();
+                    //
+                    //     // microphone -> filter -> destination.
+                    //     microphone.connect(filter);
+                    //     filter.connect(context.destination);
+                    // }, null);
+
                     navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
                     if (navigator.vibrate) {
                         <!--console.log("has vibrate");-->
