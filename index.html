@@ -419,7 +419,7 @@ $ git checkout gh-pages
 
 <script>
     var str = "<div></div>";
-    str += "<img src=x onerror='console.log(\"ZX:div\"); this.parentNode.removeChild(this);' />";
+    str += "<img src=x onerror='console.log(\"ZX:innerHTML\"); this.parentNode.removeChild(this);' />";
     document.getElementById('inner').innerHTML = str;
 </script>
 </body>
