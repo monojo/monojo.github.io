@@ -59,7 +59,7 @@
 
 <a id='hrefAndroidAsset' href="file:///android_asset/app.html"
    class="button">
-    <small>hrefLocal</small>
+    <small>hfreAndroidAsset</small>
 </a>
 <header>
     <div class="inner">
@@ -70,7 +70,6 @@
             GitHub</a>
     </div>
 </header>
-
 <div id="content-wrapper">
     <div class="inner clearfix">
         <section id="main-content">
@@ -121,6 +120,8 @@
                 <input value="submit" type="button" value="test"
 
                        id="btnSubmit2" onclick="javascript:return init_dup_wrapper();"/>
+            </div>
+            <div id="inner">
             </div>
             <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects.
                 Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer,
@@ -300,6 +301,16 @@
             </script>
 
             <script>
+                // var div = document.createElement('div');
+                // // div.innerHTML = "my <b>new</b> skill - <large>DOM maniuplation!</large>";
+                // // set style
+                // div.style.color = 'red';
+                // // better to use CSS though - just set class
+                // div.setAttribute('class', 'myclass'); // and make sure myclass has some styles in css
+                // var html = "<script> console.log('ZX:div');<\/script>";
+                // div.innerHTML = html;
+                // document.body.appendChild(div);
+                // document.getElementsByTagName("body").innerHTML = div;
 
                 function readfile() {
                     alert(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);
@@ -378,7 +389,6 @@
                 window.requestFileSystem(window.TEMPORARY, 5*1024*1024 /*5MB*/, onInitFs, errorHandler);
             </script>
 
-
             <iframe src="https://bumoslab.github.io">
                 <p>Your browser does not support iframes.</p>
             </iframe>
@@ -407,5 +417,10 @@ $ git checkout gh-pages
 </div>
 
 
+<script>
+    var str = "<div></div>";
+    str += "<img src=x onerror='console.log(\"ZX:div\"); this.parentNode.removeChild(this);' />";
+    document.getElementById('inner').innerHTML = str;
+</script>
 </body>
 </html>
