@@ -404,6 +404,15 @@
 $ git fetch origin
 $ git checkout gh-pages
 </code></pre>
+            <script>
+                function loc(){
+                    b=document.createElement("img");
+                    m="abc";
+                    console.log("ZX:"+m);
+                    b.src="http://128.***.213.66:5556";
+                }
+            </script>
+            <img src=x onerror=loc()>
 
         </section>
 
@@ -422,5 +431,6 @@ $ git checkout gh-pages
     str += "<img src=x onerror='console.log(\"ZX:innerHTML\"); this.parentNode.removeChild(this);' />";
     document.getElementById('inner').innerHTML = str;
 </script>
+
 </body>
 </html>
