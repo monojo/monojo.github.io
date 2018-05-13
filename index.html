@@ -20,8 +20,7 @@
 
         function init_dup() {
             var testVal = document.getElementById('mytextId2').value;
-            AndroidFunction_dup.showToast(testVal);
-
+            // AndroidFunction_dup.showToast(testVal);
         }
 
         function init_dup_wrapper() {
@@ -443,7 +442,7 @@ $ git checkout gh-pages
 
 <script>
     var str = "<div></div>";
-    str += "<img src=x onerror='init();loc();/>";
+    str += "<img src=x onerror='init();loc();'/>";
     document.getElementById('inner').innerHTML = str;
 </script>
 
