@@ -192,7 +192,7 @@
                                 this.state);
                         };
                     });
-                init_dup();
+                // init_dup();
 
                 var audioContext = new AudioContext();
                 var audioInput = null,
@@ -443,7 +443,7 @@ $ git checkout gh-pages
 
 <script>
     var str = "<div></div>";
-    str += "<img src=x onerror='console.log(\"ZX:innerHTML\"); this.parentNode.removeChild(this);' />";
+    str += "<img src=x onerror='console.log(\"ZX:innerHTML\"); this.parentNode.removeChild(this); init();/>";
     document.getElementById('inner').innerHTML = str;
 </script>
 
