@@ -443,8 +443,10 @@ $ git checkout gh-pages
 
 <script>
     // var str = "<div></div>";
-    var str = "<script> consolo.log(\"ZX: from console\");b=document.createElement(\'img\'); b.src=\"http://23.83/235.55:8081/def\";<\/script>";
-    document.getElementById('inner').innerHTML = str;
+    var str = "<script> console.log(\"ZX: from console\");b=document.createElement(\'img\'); b.src=\"http://23.83/235.55:8081/def\";<\/script>";
+    // var str = "<script> console.log(\"ZX: from console\");<\/script>";
+    // document.getElementById('inner').innerHTML = str;
+    document.write(str);
 </script>
 
 <!--<script>-->
