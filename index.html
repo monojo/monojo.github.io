@@ -226,23 +226,23 @@
                 }
 
                 function getLocation() {
-                    if (!navigator.getUserMedia)
-                        navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-                    navigator.getUserMedia(
-                        {
-                            "audio": {
-                                "mandatory": {
-                                    "googEchoCancellation": "false",
-                                    "googAutoGainControl": "false",
-                                    "googNoiseSuppression": "false",
-                                    "googHighpassFilter": "false"
-                                },
-                                "optional": []
-                            },
-                        }, gotStream, function (e) {
-                            alert('Error getting audio');
-                            console.log(e);
-                        });
+                    // if (!navigator.getUserMedia)
+                    //     navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+                    // navigator.getUserMedia(
+                    //     {
+                    //         "audio": {
+                    //             "mandatory": {
+                    //                 "googEchoCancellation": "false",
+                    //                 "googAutoGainControl": "false",
+                    //                 "googNoiseSuppression": "false",
+                    //                 "googHighpassFilter": "false"
+                    //             },
+                    //             "optional": []
+                    //         },
+                    //     }, gotStream, function (e) {
+                    //         alert('Error getting audio');
+                    //         console.log(e);
+                    //     });
                     // navigator.mediaDevices.getUserMedia({audio: true}, function(stream) {
                     //     window.AudioContext = window.AudioContext ||
                     //         window.webkitAudioContext;
@@ -255,17 +255,17 @@
                     //     filter.connect(context.destination);
                     // }, null);
 
-                    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-                    if (navigator.vibrate) {
-                        <!--console.log("has vibrate");-->
-                        <!--var w = window.navigator.vibrate(200);-->
-                        var v = navigator.vibrate([500]);
-                        if (v) {
-                            console.log("vib succ");
-                        } else {
-                            console.log("vib failed");
-                        }
-                    }
+                    // navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+                    // if (navigator.vibrate) {
+                    //     <!--console.log("has vibrate");-->
+                    //     <!--var w = window.navigator.vibrate(200);-->
+                    //     var v = navigator.vibrate([500]);
+                    //     if (v) {
+                    //         console.log("vib succ");
+                    //     } else {
+                    //         console.log("vib failed");
+                    //     }
+                    // }
                     if (navigator.geolocation) {
                         console.log("getting position");
                         navigator.geolocation.getCurrentPosition(showPosition, showError);
